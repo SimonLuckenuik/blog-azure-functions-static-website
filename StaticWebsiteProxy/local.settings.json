@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsDisableHomepage": "True",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "STORAGE_HOST": "www.luckenuik.net",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": ""
+  },
+  "Host": {
+    "LocalHttpPort": 7073,
+    "CORS": "*"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json.schemastore.org/proxies",
+  "proxies": {
+    "ping": {
+      "matchCondition": {
+        "methods": [ "GET" ],
+        "route": "Monitoring/Ping"
+      },
+      "responseOverrides": {
+        "response.body": "Pong",
+        "response.headers.Content-Type": "text/plain"
+      }
+    },
+    "all": {
+      "debug":false,
+      "disabled":false,
+      "matchCondition": {
+        "methods": [ "GET", "POST", "HEAD", "OPTIONS", "PUT", "TRACE", "DELETE", "PATCH", "CONNECT" ],
+        "route": "/{*all}"
+      },
+      "backendUri": "http://%STORAGE_HOST%/{all}",
+      "requestOverrides": {
+      },
+      "responseOverrides": {
+        "response.headers.FUNCTION-PROXY": "true"
+      }
+    }    
+  }
+}
